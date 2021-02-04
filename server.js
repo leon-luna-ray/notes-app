@@ -29,21 +29,15 @@ app.get('*', (req, res) => {
 });
 
 //API routes to get data
-  app.get('/api/notes', (req, res) => {
-    const notes = req.body;
-    // should read the `db.json` file and return all saved notes as JSON.
+app.get('/api/notes', (req, res) => {
+  // read the `db.json` file and return all saved notes as JSON. Not sure how to test this
 
-    // Promise will pass the json data and pasrse.
-    fetch('./db/db.json').then(data => {
-        const notes = data.json();
-        res.send(notes);
-        
-        console.log(notes);
-      }
-    );
-    // Parse json and res.send
-
+  fetch('./db/db.json').then(console.log('get note route'))
   });
+
+app.post('/api/notes', (req, res) => {
+  //should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. add unique id 
+})
   // route to get all notes or one note
   // update note route (app.put())
   // delete note route
