@@ -33,9 +33,7 @@ app.get('*', (req, res) => {
 //API routes to get data
 app.get('/api/notes', (req, res) => {
   // read the `db.json` file and return all saved notes as JSON. Not sure how to test this
-
-  fetch('./db/db.json').then(console.log('get note route'))
-  });
+}); // get
 
 //Receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. Added id and timestamp.
 
@@ -52,14 +50,18 @@ app.post('/api/notes', (req, res) => {
   // Need to find out how to append
   fs.appendFile('./db/db.json', JSON.stringify(newNote));
 
+  res.end();
+  }); // post
 
-  // Successfully got the note to post, need to find a way to save it to json with push?
+  // Update note route
+  app.put('/api/notes', (req, res) => {
 
-});
-  // route to get all notes or one note
-  // update note route (app.put())
-  // delete note route
+  }); // update
 
-// The database will be a JSON file in which new entries will be pushed into the array to save. You will have to use the middleware to parse JSON.
+  // delete note route (bonus)
+  app.delete('/api/notes', (req, res) => {
+
+  }); // delete
+
 
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
