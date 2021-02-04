@@ -1,9 +1,11 @@
 // add express server
 const express = require('express');
-const path = require('path');
 const fs = require('fs');
 const moment = require('moment');
+const path = require('path');
 const uuid = require('uuid');
+
+const db = require('./db/db.json')
 
 // Sets up the Express App
 const app = express();
@@ -46,8 +48,14 @@ app.post('/api/notes', (req, res) => {
     title: req.body.title,
     text: req.body.text,
   };
+
   console.log(newNote);
-  //res.send(newNote);
+
+  db.push(newNote);
+  res.send(newNote);
+
+  // Successfully got the note to post, need to find a way to save it to json with push?
+
 });
   // route to get all notes or one note
   // update note route (app.put())
