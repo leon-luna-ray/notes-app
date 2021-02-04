@@ -5,8 +5,6 @@ const moment = require('moment');
 const path = require('path');
 const uuid = require('uuid');
 
-const db = require('./db/db.json')
-
 // Sets up the Express App
 const app = express();
 const PORT = 3000;
@@ -51,8 +49,9 @@ app.post('/api/notes', (req, res) => {
 
   console.log(newNote);
 
-  db.push(newNote);
-  res.send(newNote);
+  // Works from here, need to find a way to json and push to d
+  // fs.writeFileSync('./db/db.json', JSON.stringify(newNote));
+
 
   // Successfully got the note to post, need to find a way to save it to json with push?
 
