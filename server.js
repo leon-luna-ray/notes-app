@@ -49,8 +49,8 @@ app.post('/api/notes', (req, res) => {
 
   console.log(newNote);
 
-  // Works from here, need to find a way to json and push to d
-  // fs.writeFileSync('./db/db.json', JSON.stringify(newNote));
+  // Need to find out how to append
+  fs.appendFile('./db/db.json', JSON.stringify(newNote));
 
 
   // Successfully got the note to post, need to find a way to save it to json with push?
