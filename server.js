@@ -35,7 +35,10 @@ app.get('*', (req, res) => {
 
     // Promise will pass the json data and pasrse.
     fetch('./db/db.json').then(data => {
-        return data.json();
+        const notes = data.json();
+        res.send(notes);
+        
+        console.log(notes);
       }
     );
     // Parse json and res.send
