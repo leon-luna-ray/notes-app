@@ -2,6 +2,8 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const moment = require('moment');
+const uuid = require('uuid');
 
 // Sets up the Express App
 const app = express();
@@ -35,16 +37,17 @@ app.get('/api/notes', (req, res) => {
   fetch('./db/db.json').then(console.log('get note route'))
   });
 
+//Receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. Added id and timestamp.
+
 app.post('/api/notes', (req, res) => {
-  //Receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. Added id and timestamp.
   const newNote = {
     id: uuid.v4(),
     time: moment().format(),
     title: req.body.title,
-    body: req.body.body,
+    text: req.body.text,
   };
-
-  res.send(newNote);
+  console.log(newNote);
+  //res.send(newNote);
 });
   // route to get all notes or one note
   // update note route (app.put())
