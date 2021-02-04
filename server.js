@@ -36,8 +36,16 @@ app.get('/api/notes', (req, res) => {
   });
 
 app.post('/api/notes', (req, res) => {
-  //should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. add unique id 
-})
+  //Receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. Added id and timestamp.
+  const newNote = {
+    id: uuid.v4(),
+    time: moment().format(),
+    title: req.body.title,
+    body: req.body.body,
+  };
+
+  res.send(newNote);
+});
   // route to get all notes or one note
   // update note route (app.put())
   // delete note route
