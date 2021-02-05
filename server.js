@@ -7,7 +7,7 @@ const uuid = require('uuid');
 
 // Sets up the Express App
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -48,7 +48,7 @@ app.post('/api/notes', (req, res) => {
   console.log(newNote);
 
   // Need to find out how to append
-  fs.appendFile('./db/db.json', JSON.stringify(newNote));
+  fs.witeFile('./db/db.json', JSON.stringify(newNote));
 
   res.end();
   }); // post

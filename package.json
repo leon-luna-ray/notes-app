@@ -1,10 +1,10 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Ray Luna",
   "license": "ISC",
@@ -14,5 +14,16 @@
     "moment": "^2.29.1",
     "nodemon": "^2.0.7",
     "uuid": "^8.3.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon-luna-ray/notes-app.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/leon-luna-ray/notes-app/issues"
+  },
+  "homepage": "https://github.com/leon-luna-ray/notes-app#readme",
+  "description": ""
 }
