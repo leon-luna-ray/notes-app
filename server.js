@@ -5,6 +5,11 @@ const moment = require('moment');
 const path = require('path');
 const uuid = require('uuid');
 
+const notesDb = fs.readFileSync('./db/db.json');
+let notes = JSON.stringify(notesDb);
+
+console.log(notes);
+
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -45,16 +50,17 @@ app.post('/api/notes', (req, res) => {
     text: req.body.text,
   };
 
-  console.log(newNote);
-
   // Need to find out how to append
-  fs.witeFile('./db/db.json', JSON.stringify(newNote));
-
+  fs.writeFileSync('./db/db', JSON.stringify(newNote));
   res.end();
+  console.log(newNote);
   }); // post
 
   // Update note route
   app.put('/api/notes', (req, res) => {
+    const content = JSON.parse(file_content);
+    const updatedNote = content[req.id];
+    updatedNote.push(req);
 
   }); // update
 
