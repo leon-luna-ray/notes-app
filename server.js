@@ -8,9 +8,6 @@ const noteDb = fs.readFileSync('./db/db.json');
 const notes = JSON.parse(noteDb);
 let db = require('./db/db.json');
 
-console.log(noteDb);
-console.log(notes);
-
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,12 +16,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-
-
-
-// let notes = notesDb.json();
-
-
 
 // HTML routes to get the pages to serve
 app.get('/', (req, res) => {
@@ -44,10 +35,9 @@ app.get('/api/notes', (req, res) => {
 
 //Receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. Added id and timestamp.
 
-// app.post('/api/notes', (req, res) => {
-//   console.log(req)
-//   res.send(req)`
-// }); // post route
+app.post('/api/notes', (req, res) => {
+  console.log('post request recieved!')
+}); // post route (working)
 
 // app.post('/api/notes', (req, res) => {
 //   const newNote = {
