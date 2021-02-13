@@ -37,23 +37,18 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
   console.log('post request recieved!')
-}); // post route (working)
+    const newNote = {
+    id: uuid.v4(),
+    time: moment().format(),
+    title: req.body.title,
+    text: req.body.text,
+  };
 
-// app.post('/api/notes', (req, res) => {
-//   const newNote = {
-//     id: uuid.v4(),
-//     time: moment().format(),
-//     title: req.body.title,
-//     text: req.body.text,
-//   };
-
-//   // Need to find out how to append currently not working
-//   fs.writeFile(noteDb, newNote);
-
-//   res.send(newNote);v
+    // fs.writeFile(noteDb, newNote);
+    // res.send(newNote);
   
-//   console.log(newNote);
-//   }); // post
+    console.log(newNote);
+}); // post route (working)
 
   // // Update note route
   // app.put('/api/notes', (req, res) => {
