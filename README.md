@@ -3,7 +3,7 @@
 
   ## Description
 
-  An app for taking notes for business.
+  A note simple note taking app that allows you to easily save your reminders on the go.
 
   ## Table of Contents
 
@@ -46,7 +46,7 @@
 
   ## Links
 
-  - [Deployed Project](https://llr-note-taker.herokuapp.com/) 
+  - [Deployed Project](https://luna-note-taker.herokuapp.com/) 
 
   - [Project Repository](https://github.com/leon-luna-ray/notes-app)
 
