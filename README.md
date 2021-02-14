@@ -17,19 +17,19 @@
 
   ## Image
 
-  ![Screenshot](/Assets/screencapture.png)
+  ![Screenshot](./assets/screenshot.png)
 
   ## Technologies
   
-  HTML, CSS, Javascript, Node
+  HTML, CSS, Javascript, Node (npm: moment, uuid, f)
 
   ## Known-Bugs
 
-  There are some bugs to work out regarding saving the note.
+  No known bugs at this time.
 
   ## Next-Steps
 
-  Finish the functionality and work out bugs.
+  Add an update route to edit notes. Add functionality to display the date the note was entered.
 
   ## License
 
