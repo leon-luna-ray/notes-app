@@ -4,6 +4,7 @@
   ## Description
 
   A note simple note taking app that allows you to easily save your reminders on the go.
+  [Click to launch! 🚀](https://luna-note-taker.herokuapp.com/)
 
   ## Table of Contents
 
