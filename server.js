@@ -4,9 +4,8 @@ const fs = require('fs');
 const moment = require('moment');
 const path = require('path');
 const uuid = require('uuid');
-const noteDb = fs.readFileSync('./db/db.json');
-const notes = JSON.parse(noteDb);
-let db = require('./db/db.json');
+const db = fs.readFileSync('./db/db.json');
+const notes = JSON.parse(db);
 
 // Sets up the Express App
 const app = express();
@@ -44,10 +43,13 @@ app.post('/api/notes', (req, res) => {
     text: req.body.text,
   };
 
-    // fs.writeFile(noteDb, newNote);
-    // res.send(newNote);
-  
-    console.log(newNote);
+  notes.push(newNote);
+
+  fs.writeFile('./db/db.json', JSON.stringify(notes, null, 2), err => {
+    if (err) {
+        console.log(err)
+    } else {console.log('file written successfully!')}
+});`
 }); // post route (working)
 
   // // Update note route
