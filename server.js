@@ -7,7 +7,7 @@ const uuid = require('uuid');
 const db = fs.readFileSync('./db/db.json');
 const notes = JSON.parse(db);
 
-// Sets up the Express App
+// Sets up the Express App`
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -35,7 +35,6 @@ app.get('/api/notes', (req, res) => {
 //Receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. Added id and timestamp.
 
 app.post('/api/notes', (req, res) => {
-  console.log('post request recieved!')
     const newNote = {
     id: uuid.v4(),
     time: moment().format(),
@@ -43,14 +42,15 @@ app.post('/api/notes', (req, res) => {
     text: req.body.text,
   };
 
+  // Add note to the notes db then write file.
   notes.push(newNote);
 
   fs.writeFile('./db/db.json', JSON.stringify(notes, null, 2), err => {
     if (err) {
         console.log(err)
-    } else {console.log('file written successfully!')}
-});`
-}); // post route (working)
+    } 
+  });
+}); // post route
 
   // // Update note route
   // app.put('/api/notes', (req, res) => {
